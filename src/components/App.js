@@ -1,33 +1,30 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
+import ResourceList from "./ResourceList";
 
-class App extends Component {
-  state = { resource: "posts" };
+const handleResource = (setResource, newState) => setResource(newState);
 
-  handleState = newState => this.setState({ resource: newState });
-
-  render() {
-    return (
-      <div className="ui raised very padded text container segment">
-        <div>
-          <button
-            className="ui violet button"
-            onClick={() => this.handleState("posts")}
-          >
-            Posts
-          </button>
-          <button
-            className="ui black button"
-            onClick={() => this.handleState("todos")}
-          >
-            Todos
-          </button>
-        </div>
-        <h2 className="ui header">
-          {" "}{this.state.resource}
-        </h2>
+const App = () => {
+  const [resource, setResource] = useState("posts");
+  // const [count, setCount] = useState(0);
+  return (
+    <div className="ui raised very padded text container segment">
+      <div>
+        <button
+          className="ui violet button"
+          onClick={() => handleResource(setResource, "posts")}
+        >
+          Posts
+        </button>
+        <button
+          className="ui black button"
+          onClick={() => handleResource(setResource, "todos")}
+        >
+          Todos
+        </button>
       </div>
-    );
-  }
-}
+      <ResourceList resource={resource} />
+    </div>
+  );
+};
 
 export default App;
