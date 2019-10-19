@@ -8,8 +8,8 @@ const ResourceList = ({ resource }) => {
   //     const response = await axios.get(
   //       `https://jsonplaceholder.typicode.com/${resource}`
   //     );
+  // setResources(response.data);
 
-  //
   //   };
 
   useEffect(
