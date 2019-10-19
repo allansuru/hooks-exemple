@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ResourceList from "./ResourceList";
+import UserList from "./UserList";
 
 const handleResource = (setResource, newState) => setResource(newState);
 
@@ -23,6 +24,7 @@ const App = () => {
         </button>
       </div>
       <ResourceList resource={resource} />
+      <UserList />
     </div>
   );
 };
